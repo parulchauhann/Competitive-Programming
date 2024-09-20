@@ -56,7 +56,6 @@ int main() {
         input[i] = temp;
     }
     cout<<longestChain(input, size)<<endl;
-    cout<<20;
     
     return 0;
 }
