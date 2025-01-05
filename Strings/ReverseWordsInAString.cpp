@@ -1,0 +1,44 @@
+// Reverse Words in a String
+// Problem Statement: Given a string s, reverse the words of the string.
+// Examples:
+// Example 1:
+// Input: s=”this is an amazing program”
+// Output: “program amazing an is this”
+// Example 2:
+// Input: s=”This is decent”
+// Output: “decent is This”
+
+
+// optimal approach
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s="TUF is great for interview preparation";
+    cout<<"Before reversing words: "<<endl;
+    cout<<s<<endl;
+    s+=" ";
+    stack<string> st;
+    int i;
+    string str="";
+    for(i=0;i<s.length();i++)
+    {
+        if(s[i]==' ')
+        {
+            st.push(str);
+            str="";
+        }
+        else str+=s[i];
+    }
+    string ans="";
+    while(st.size()!=1)
+    {
+        ans+=st.top()+" ";
+        st.pop();
+    }
+    ans+=st.top();
+    cout<<"After reversing words: "<<endl;
+    cout<<ans;
+    return 0;
+}
